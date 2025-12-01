@@ -1,1 +1,168 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap');
+
+@theme {
+  /* تعريف الألوان الخاصة بـ NET KEY */
+  --color-brand-primary: #0ea5e9;
+  /* Sky 500 */
+  --color-brand-dark: #0f172a;
+  /* Slate 900 */
+  --color-brand-light: #f8fafc;
+  /* Slate 50 - أفضل للقراءة */
+  --color-accent: #3b82f6;
+  /* Blue 500 */
+
+  /* خطوط عربية */
+  --font-sans: 'Cairo', system-ui, sans-serif;
+}
+
+/* دعم الوضع الليلي */
+:root {
+  color-scheme: light;
+  background-color: #f8fafc;
+}
+
+.dark {
+  color-scheme: dark;
+  background-color: #0f172a;
+}
+
+/* الألوان الأساسية للـ Body */
+body {
+  @apply bg-slate-50 text-slate-900 transition-colors duration-300;
+  min-height: 100vh;
+}
+
+.dark body {
+  @apply bg-brand-dark text-slate-50;
+}
+
+/* تحسين الألوان في Light Mode */
+.light-card {
+  @apply bg-white border-slate-200;
+}
+
+.dark .light-card {
+  @apply bg-slate-800 border-slate-700;
+}
+
+/* Custom Scrollbar - محسّن للـ Light Mode */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* تحسين النصوص في Light Mode */
+.text-primary-light {
+  @apply text-slate-900;
+}
+
+.dark .text-primary-light {
+  @apply text-slate-50;
+}
+
+.text-secondary-light {
+  @apply text-slate-600;
+}
+
+.dark .text-secondary-light {
+  @apply text-slate-400;
+}
+
+/* تحسين الـ Borders */
+.border-light {
+  @apply border-slate-200;
+}
+
+.dark .border-light {
+  @apply border-slate-700;
+}
+
+/* تحسين الـ Hover States في Light Mode */
+.hover-light {
+  @apply hover:bg-slate-100;
+}
+
+.dark .hover-light {
+  @apply hover:bg-slate-800;
+}
+
+/* تأكيد التباين للنصوص المهمة */
+.text-emphasis {
+  @apply text-slate-800 font-medium;
+}
+
+.dark .text-emphasis {
+  @apply text-slate-100;
+}
