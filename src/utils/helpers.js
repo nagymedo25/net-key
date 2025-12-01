@@ -1,4 +1,4 @@
-// Helper functions for NET KEY Platform
+import i18n from '../i18n';
 
 export const formatDate = (date) => {
     const now = new Date();
@@ -8,13 +8,16 @@ export const formatDate = (date) => {
     const hours = Math.floor(minutes / 60);
     const days = Math.floor(hours / 24);
 
+    const lang = i18n.language;
+    const rtf = new Intl.RelativeTimeFormat(lang, { numeric: 'auto' });
+
     if (days > 7) {
-        return new Date(date).toLocaleDateString('ar-EG');
+        return new Date(date).toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-US');
     }
-    if (days > 0) return `منذ ${days} يوم`;
-    if (hours > 0) return `منذ ${hours} ساعة`;
-    if (minutes > 0) return `منذ ${minutes} دقيقة`;
-    return 'الآن';
+    if (days > 0) return rtf.format(-days, 'day');
+    if (hours > 0) return rtf.format(-hours, 'hour');
+    if (minutes > 0) return rtf.format(-minutes, 'minute');
+    return lang === 'ar' ? 'الآن' : 'Just now';
 };
 
 export const formatNumber = (num) => {

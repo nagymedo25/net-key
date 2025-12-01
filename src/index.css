@@ -1,43 +1,57 @@
-@import "tailwindcss";
+/* 1. استيراد الخطوط (يجب أن يكون في أول سطرين) */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* 2. استيراد مكتبة Tailwind (يجب أن يلي الخطوط مباشرة) */
+@import "tailwindcss";
+
+/* 3. إعدادات الثيم (Tailwind v4) */
 @theme {
   /* تعريف الألوان الخاصة بـ NET KEY */
-  --color-brand-primary: #0ea5e9;
-  /* Sky 500 */
-  --color-brand-dark: #0f172a;
-  /* Slate 900 */
-  --color-brand-light: #f8fafc;
-  /* Slate 50 - أفضل للقراءة */
-  --color-accent: #3b82f6;
-  /* Blue 500 */
+  --color-brand-primary: #0ea5e9; /* Sky 500 */
+  --color-brand-dark: #0f172a;    /* Slate 900 */
+  --color-brand-light: #f8fafc;   /* Slate 50 */
+  --color-accent: #3b82f6;        /* Blue 500 */
 
-  /* خطوط عربية */
-  --font-sans: 'Cairo', system-ui, sans-serif;
+  /* ربط الخط الأساسي بمتغير CSS لسهولة تغييره ديناميكياً */
+  --font-sans: var(--font-family-sans);
 }
 
-/* دعم الوضع الليلي */
+/* 4. تعريف متغيرات CSS والجذر */
 :root {
+  /* الخط الافتراضي (عربي) */
+  --font-family-sans: 'Cairo', system-ui, sans-serif;
+  
+  /* إعدادات الألوان الافتراضية (Light Mode) */
   color-scheme: light;
-  background-color: #f8fafc;
+  background-color: var(--color-brand-light);
 }
 
+/* تغيير الخط تلقائياً عند تحويل اللغة إلى الإنجليزية (LTR) */
+:root[dir="ltr"] {
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* إعدادات الوضع الليلي */
 .dark {
   color-scheme: dark;
-  background-color: #0f172a;
+  background-color: var(--color-brand-dark);
 }
 
-/* الألوان الأساسية للـ Body */
+/* 5. تنسيقات العناصر الأساسية (Utilities & Base) */
+
+/* تنسيق الـ Body */
 body {
   @apply bg-slate-50 text-slate-900 transition-colors duration-300;
   min-height: 100vh;
+  font-family: var(--font-family-sans);
 }
 
 .dark body {
   @apply bg-brand-dark text-slate-50;
 }
 
-/* تحسين الألوان في Light Mode */
+/* تحسين الألوان في Light Mode للكروت */
 .light-card {
   @apply bg-white border-slate-200;
 }
@@ -46,7 +60,7 @@ body {
   @apply bg-slate-800 border-slate-700;
 }
 
-/* Custom Scrollbar - محسّن للـ Light Mode */
+/* تخصيص شريط التمرير (Scrollbar) */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -77,17 +91,10 @@ body {
   background: #64748b;
 }
 
-/* Animations */
+/* Animations - حركات */
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-slideIn {
@@ -95,20 +102,15 @@ body {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .animate-fadeIn {
   animation: fadeIn 0.2s ease-out;
 }
 
-/* Line clamp utilities */
+/* Line Clamp Utilities */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -149,7 +151,7 @@ body {
   @apply border-slate-700;
 }
 
-/* تحسين الـ Hover States في Light Mode */
+/* تحسين الـ Hover States */
 .hover-light {
   @apply hover:bg-slate-100;
 }

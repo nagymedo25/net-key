@@ -1,20 +1,21 @@
-// Case Studies Listing Page
 import { Link } from 'react-router-dom';
 import { Eye, ThumbsUp, MessageCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import { MOCK_POSTS } from '../utils/mockData';
 import { formatDate } from '../utils/helpers';
 
 export default function CaseStudies() {
+    const { t } = useTranslation();
     const caseStudies = MOCK_POSTS.filter(p => p.type === 'case-study');
 
     return (
         <div className="max-w-6xl mx-auto">
             <div className="mb-8">
-                <h1 className="text-3xl font-bold mb-2">دراسات الحالة</h1>
+                <h1 className="text-3xl font-bold mb-2">{t('case_studies.title')}</h1>
                 <p className="text-slate-600 dark:text-slate-400">
-                    حالات واقعية ومشاكل تم حلها من قبل مهندسين محترفين
+                    {t('case_studies.subtitle')}
                 </p>
             </div>
 
@@ -32,7 +33,7 @@ export default function CaseStudies() {
                             )}
 
                             {/* Badge */}
-                            <Badge color="orange" className="mb-3">📋 دراسة حالة</Badge>
+                            <Badge color="orange" className="mb-3">{t('post.types.case_study')}</Badge>
 
                             {/* Title */}
                             <h3 className="font-bold text-lg mb-2 line-clamp-2 hover:text-brand-primary transition">

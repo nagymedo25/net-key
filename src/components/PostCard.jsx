@@ -1,7 +1,7 @@
-// Post Card Component
 import { Heart, MessageCircle, Bookmark, Share2, MoreVertical } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Avatar from './ui/Avatar';
 import Badge from './ui/Badge';
 import { MOCK_USERS } from '../utils/mockData';
@@ -9,6 +9,7 @@ import { POST_TYPES } from '../utils/constants';
 import { formatDate } from '../utils/helpers';
 
 export default function PostCard({ post }) {
+    const { t } = useTranslation();
     const [isLiked, setIsLiked] = useState(false);
     const [isSaved, setIsSaved] = useState(false);
     const [reactions, setReactions] = useState(post.reactions);
@@ -38,7 +39,7 @@ export default function PostCard({ post }) {
                             </Link>
                             {postType && (
                                 <span className={`text-xs px-2 py-0.5 rounded ${postType.color}`}>
-                                    {postType.icon} {postType.label}
+                                    {postType.icon} {t(`post.types.${postType.id}`)}
                                 </span>
                             )}
                         </div>

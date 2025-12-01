@@ -1,40 +1,34 @@
-// Case Study Detail Page
 import { useParams, Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Avatar from '../components/ui/Avatar';
-import PostCard from '../components/PostCard';
 import { MOCK_POSTS, MOCK_USERS } from '../utils/mockData';
 import { formatDate } from '../utils/helpers';
 
 export default function CaseStudyDetail() {
+    const { t, i18n } = useTranslation();
     const { id } = useParams();
     const caseStudy = MOCK_POSTS.find(p => p.id === parseInt(id)) || MOCK_POSTS[0];
     const author = MOCK_USERS.find(u => u.id === caseStudy.authorId) || MOCK_USERS[0];
 
     const relatedCases = MOCK_POSTS.filter(p => p.type === 'case-study' && p.id !== caseStudy.id).slice(0, 3);
 
-    const solutionSteps = [
-        'تحديد المشكلة بدقة من خلال فحص اللوجات والـ Topology',
-        'عزل الأجهزة المتأثرة وإيقاف الخدمات غير الضرورية',
-        'تطبيق التكوين الصحيح على الأجهزة المتأثرة',
-        'اختبار الحل على بيئة تجريبية قبل التطبيق',
-        'التطبيق النهائي ومراقبة الأداء'
-    ];
+    const solutionSteps = t('case_studies.example_content.steps', { returnObjects: true });
 
     return (
         <div className="max-w-7xl mx-auto">
             <Link to="/case-studies" className="inline-flex items-center gap-2 text-brand-primary hover:underline mb-6">
-                <ArrowRight className="w-4 h-4" />
-                العودة لدراسات الحالة
+                <ArrowRight className={`w-4 h-4 ${i18n.language === 'ar' ? 'rotate-180' : ''}`} />
+                {t('case_studies.back_to_list')}
             </Link>
 
             <div className="grid lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 space-y-6">
                     {/* Main Content */}
                     <Card className="p-8">
-                        <Badge color="orange" className="mb-4">📋 دراسة حالة</Badge>
+                        <Badge color="orange" className="mb-4">{t('post.types.case_study')}</Badge>
 
                         <h1 className="text-3xl font-bold mb-4">{caseStudy.title}</h1>
 
@@ -63,15 +57,14 @@ export default function CaseStudyDetail() {
                         {/* Problem Description */}
                         <div className="mb-8">
                             <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
-                                ⚠️ وصف المشكلة
+                                ⚠️ {t('case_studies.problem_description')}
                             </h2>
                             <div className="prose dark:prose-invert max-w-none">
                                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                                     {caseStudy.content}
                                 </p>
                                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed mt-4">
-                                    المشكلة كانت تؤثر على الشبكة بشكل كامل مما أدى إلى انقطاع الخدمة عن المستخدمين.
-                                    بعد الفحص الدقيق، تبين أن السبب الرئيسي هو تكوين خاطئ في بروتوكول Spanning Tree.
+                                    {t('case_studies.example_content.problem')}
                                 </p>
                             </div>
                         </div>
@@ -79,10 +72,10 @@ export default function CaseStudyDetail() {
                         {/* Solution Steps */}
                         <div className="mb-8">
                             <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-                                ✅ خطوات الحل
+                                ✅ {t('case_studies.solution_steps')}
                             </h2>
                             <div className="space-y-3">
-                                {solutionSteps.map((step, index) => (
+                                {Array.isArray(solutionSteps) && solutionSteps.map((step, index) => (
                                     <div key={index} className="flex items-start gap-3 p-4 bg-slate-50 dark:bg-slate-900 rounded-lg">
                                         <div className="flex-shrink-0 w-8 h-8 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold">
                                             {index + 1}
@@ -97,11 +90,10 @@ export default function CaseStudyDetail() {
                         <div className="p-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-900 rounded-lg">
                             <h3 className="font-bold text-green-800 dark:text-green-300 mb-3 flex items-center gap-2">
                                 <CheckCircle2 className="w-5 h-5" />
-                                النتيجة النهائية
+                                {t('case_studies.final_result')}
                             </h3>
                             <p className="text-green-700 dark:text-green-300">
-                                تم حل المشكلة بنجاح وعادت الشبكة للعمل بشكل طبيعي.
-                                تم توثيق الحل ومشاركته مع الفريق لتجنب تكرار المشكلة مستقبلاً.
+                                {t('case_studies.example_content.result')}
                             </p>
                         </div>
 
@@ -119,7 +111,7 @@ export default function CaseStudyDetail() {
 
                     {/* Comments Section */}
                     <Card className="p-6">
-                        <h3 className="text-lg font-bold mb-4">التعليقات ({caseStudy.comments})</h3>
+                        <h3 className="text-lg font-bold mb-4">{t('common.comments')} ({caseStudy.comments})</h3>
                         <div className="text-sm text-slate-500">التعليقات ستظهر هنا...</div>
                     </Card>
                 </div>
@@ -127,7 +119,7 @@ export default function CaseStudyDetail() {
                 {/* Sidebar */}
                 <div className="space-y-6">
                     <Card className="p-6">
-                        <h3 className="font-bold mb-4">دراسات حالة مشابهة</h3>
+                        <h3 className="font-bold mb-4">{t('case_studies.related_cases')}</h3>
                         <div className="space-y-4">
                             {relatedCases.map((related) => (
                                 <Link
@@ -137,9 +129,9 @@ export default function CaseStudyDetail() {
                                 >
                                     <p className="font-medium text-sm line-clamp-2 mb-1">{related.title}</p>
                                     <div className="flex items-center gap-2 text-xs text-slate-500">
-                                        <span>{related.views} مشاهدة</span>
+                                        <span>{related.views} {t('common.views')}</span>
                                         <span>•</span>
-                                        <span>{related.comments} تعليق</span>
+                                        <span>{related.comments} {t('common.comments')}</span>
                                     </div>
                                 </Link>
                             ))}

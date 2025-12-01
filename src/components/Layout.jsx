@@ -3,11 +3,13 @@ import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import { Menu, Search, Bell, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Sidebar from './Sidebar';
 
 export default function Layout() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
+    const { t } = useTranslation();
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -37,13 +39,13 @@ export default function Layout() {
                         {/* Search Bar */}
                         <form onSubmit={handleSearch} className="flex-1 max-w-2xl">
                             <div className="relative">
-                                <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                                <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 rtl:right-auto rtl:left-3" />
                                 <input
                                     type="text"
-                                    placeholder="ابحث عن منشورات، أسئلة، أو مستخدمين..."
+                                    placeholder={t('common.search_placeholder')}
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
-                                    className="w-full pr-10 pl-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 border border-slate-200 dark:border-slate-700 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 focus:outline-none transition"
+                                    className="w-full pr-10 pl-4 rtl:pr-4 rtl:pl-10 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 border border-slate-200 dark:border-slate-700 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 focus:outline-none transition"
                                 />
                             </div>
                         </form>
@@ -55,7 +57,7 @@ export default function Layout() {
                                 className="relative p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition"
                             >
                                 <Bell className="w-6 h-6 text-slate-700 dark:text-slate-300" />
-                                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full rtl:right-auto rtl:left-1"></span>
                             </Link>
 
                             <Link
@@ -63,7 +65,7 @@ export default function Layout() {
                                 className="hidden sm:flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-primary to-accent text-white rounded-full font-semibold hover:shadow-lg hover:shadow-brand-primary/30 transition"
                             >
                                 <Plus className="w-5 h-5" />
-                                <span>منشور جديد</span>
+                                <span>{t('common.new_post')}</span>
                             </Link>
                         </div>
                     </div>

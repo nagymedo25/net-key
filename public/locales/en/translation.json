@@ -1,0 +1,207 @@
+{
+    "app_name": "NET KEY",
+    "nav": {
+        "home": "Home",
+        "rooms": "Communities",
+        "knowledge": "Knowledge Center",
+        "jobs": "Jobs",
+        "messages": "Messages",
+        "leaderboard": "Leaderboard",
+        "notifications": "Notifications",
+        "profile": "Profile",
+        "settings": "Settings"
+    },
+    "theme": {
+        "light": "Light Mode",
+        "dark": "Dark Mode"
+    },
+    "language": {
+        "label": "Language",
+        "arabic": "العربية",
+        "english": "English"
+    },
+    "common": {
+        "search_placeholder": "Search posts, questions, or users...",
+        "new_post": "New Post",
+        "start_now": "Start Now",
+        "points": "pts",
+        "comments": "Comments",
+        "likes": "Likes",
+        "views": "Views",
+        "share": "Share",
+        "save": "Save",
+        "report": "Report",
+        "edit": "Edit",
+        "delete": "Delete",
+        "cancel": "Cancel",
+        "submit": "Submit",
+        "loading": "Loading...",
+        "error": "Something went wrong",
+        "success": "Success",
+        "follow": "Follow",
+        "unfollow": "Unfollow",
+        "message": "Message",
+        "load_more": "Load More"
+    },
+    "landing": {
+        "vision": "Vision",
+        "features": "Features",
+        "audience": "Audience"
+    },
+    "feed": {
+        "filters": {
+            "all": "All",
+            "newest": "Newest",
+            "active": "Most Active",
+            "questions": "Questions",
+            "projects": "Projects",
+            "case_studies": "Case Studies"
+        },
+        "trending": "Trending Topics",
+        "top_questions": "Top Questions",
+        "suggested_users": "Suggested Members",
+        "create_post_placeholder": "Share what's on your mind...",
+        "earn_points": "Earn Points!",
+        "earn_points_desc": "Help the community and earn valuable points and badges",
+        "actions": {
+            "answer_question": "Answer a Question",
+            "post_case_study": "Post a Case Study",
+            "best_answer": "Best Answer"
+        }
+    },
+    "post": {
+        "create_title": "Create New Post",
+        "title_placeholder": "Post Title",
+        "content_placeholder": "Write your post content here...",
+        "tags_placeholder": "Add tags (separate with space)",
+        "type_label": "Post Type",
+        "types": {
+            "general": "General",
+            "question": "Question",
+            "issue": "Technical Issue",
+            "project": "Project",
+            "case_study": "Case Study"
+        },
+        "upload_image": "Upload Image"
+    },
+    "rooms": {
+        "title": "Specialized Communities",
+        "subtitle": "Join communities that interest you and share your expertise with thousands of engineers",
+        "members": "Member",
+        "join": "Join",
+        "leave": "Leave",
+        "about": "About Community",
+        "active": "Active",
+        "posts": "Posts",
+        "room_posts": "Community Posts",
+        "active_members": "Active Members",
+        "subtopics": "Subtopics",
+        "topics": {
+            "basics": "Basics",
+            "advanced": "Advanced",
+            "common_issues": "Common Issues",
+            "examples": "Practical Examples"
+        },
+        "types": {
+            "routing-switching": {
+                "name": "Routing & Switching",
+                "description": "OSPF, EIGRP, VLANs, STP, and routing protocols"
+            },
+            "fiber-optics": {
+                "name": "Fiber Optics",
+                "description": "Fiber installation, OTDR, splicing, and optical networks"
+            },
+            "cybersecurity": {
+                "name": "Cybersecurity",
+                "description": "Firewalls, IDS/IPS, penetration testing, security hardening"
+            },
+            "troubleshooting": {
+                "name": "Troubleshooting Lab",
+                "description": "Network diagnostics, packet analysis, debugging techniques"
+            },
+            "automation": {
+                "name": "Network Automation",
+                "description": "Python, Ansible, APIs, DevOps for networking"
+            },
+            "jobs": {
+                "name": "Jobs Hub",
+                "description": "Career opportunities and networking jobs"
+            }
+        }
+    },
+    "case_studies": {
+        "title": "Case Studies",
+        "subtitle": "Real-world cases and problems solved by professional engineers",
+        "back_to_list": "Back to Case Studies",
+        "problem_description": "Problem Description",
+        "solution_steps": "Solution Steps",
+        "final_result": "Final Result",
+        "related_cases": "Related Case Studies",
+        "example_content": {
+            "problem": "The problem was affecting the entire network, causing service interruption for users. After careful inspection, it turned out the main cause was a misconfiguration in the Spanning Tree Protocol.",
+            "result": "The problem was successfully resolved and the network returned to normal operation. The solution was documented and shared with the team to avoid future recurrence.",
+            "steps": [
+                "Accurately identify the problem by examining logs and Topology",
+                "Isolate affected devices and stop unnecessary services",
+                "Apply the correct configuration to affected devices",
+                "Test the solution in a staging environment before deployment",
+                "Final deployment and performance monitoring"
+            ]
+        }
+    },
+    "profile": {
+        "edit_profile": "Edit Profile",
+        "level": "Level",
+        "skills": "Skills",
+        "certificates": "Certificates",
+        "activity": "Activity",
+        "about": "About Me",
+        "joined": "Joined"
+    },
+    "knowledge": {
+        "title": "Knowledge Center",
+        "continue_learning": "Continue Learning",
+        "levels": {
+            "beginner": "Beginner",
+            "intermediate": "Intermediate",
+            "advanced": "Advanced"
+        },
+        "lessons": "Lessons",
+        "quiz": "Quiz",
+        "start_quiz": "Start Quiz"
+    },
+    "jobs": {
+        "title": "Jobs & Opportunities",
+        "search_placeholder": "Search for a job...",
+        "filters": {
+            "full_time": "Full Time",
+            "part_time": "Part Time",
+            "remote": "Remote",
+            "internship": "Internship"
+        },
+        "apply": "Apply",
+        "posted": "Posted"
+    },
+    "messages": {
+        "title": "Messages",
+        "search_placeholder": "Search conversations...",
+        "type_message": "Type a message...",
+        "online": "Online",
+        "offline": "Offline"
+    },
+    "notifications": {
+        "title": "Notifications",
+        "mark_all_read": "Mark all as read",
+        "empty": "No new notifications"
+    },
+    "settings": {
+        "title": "Settings",
+        "account": "Account",
+        "privacy": "Privacy",
+        "notifications": "Notifications",
+        "security": "Security",
+        "language": "Language",
+        "theme": "Theme",
+        "save_changes": "Save Changes"
+    }
+}

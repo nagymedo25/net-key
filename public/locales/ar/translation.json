@@ -1,0 +1,207 @@
+{
+    "app_name": "NET KEY",
+    "nav": {
+        "home": "الرئيسية",
+        "rooms": "المجتمعات",
+        "knowledge": "مركز المعرفة",
+        "jobs": "الوظائف",
+        "messages": "الرسائل",
+        "leaderboard": "المتصدرون",
+        "notifications": "الإشعارات",
+        "profile": "الملف الشخصي",
+        "settings": "الإعدادات"
+    },
+    "theme": {
+        "light": "الوضع النهاري",
+        "dark": "الوضع الليلي"
+    },
+    "language": {
+        "label": "اللغة",
+        "arabic": "العربية",
+        "english": "English"
+    },
+    "common": {
+        "search_placeholder": "ابحث عن منشورات، أسئلة، أو مستخدمين...",
+        "new_post": "منشور جديد",
+        "start_now": "ابدأ الآن",
+        "points": "نقطة",
+        "comments": "تعليقات",
+        "likes": "إعجابات",
+        "views": "مشاهدات",
+        "share": "مشاركة",
+        "save": "حفظ",
+        "report": "إبلاغ",
+        "edit": "تعديل",
+        "delete": "حذف",
+        "cancel": "إلغاء",
+        "submit": "إرسال",
+        "loading": "جاري التحميل...",
+        "error": "حدث خطأ ما",
+        "success": "تم بنجاح",
+        "follow": "متابعة",
+        "unfollow": "إلغاء المتابعة",
+        "message": "رسالة",
+        "load_more": "تحميل المزيد"
+    },
+    "landing": {
+        "vision": "الرؤية",
+        "features": "المميزات",
+        "audience": "الجمهور"
+    },
+    "feed": {
+        "filters": {
+            "all": "الكل",
+            "newest": "الأحدث",
+            "active": "الأكثر نشاطاً",
+            "questions": "أسئلة",
+            "projects": "مشاريع",
+            "case_studies": "دراسات حالة"
+        },
+        "trending": "المواضيع الرائجة",
+        "top_questions": "أسئلة بحاجة لإجابة",
+        "suggested_users": "أعضاء مقترحون",
+        "create_post_placeholder": "شارك ما يدور في ذهنك...",
+        "earn_points": "اكسب نقاط!",
+        "earn_points_desc": "ساعد المجتمع واحصل على نقاط وشارات قيّمة",
+        "actions": {
+            "answer_question": "الإجابة على سؤال",
+            "post_case_study": "نشر دراسة حالة",
+            "best_answer": "أفضل إجابة"
+        }
+    },
+    "post": {
+        "create_title": "إنشاء منشور جديد",
+        "title_placeholder": "عنوان المنشور",
+        "content_placeholder": "اكتب محتوى منشورك هنا...",
+        "tags_placeholder": "أضف وسوم (افصل بينها بمسافة)",
+        "type_label": "نوع المنشور",
+        "types": {
+            "general": "عام",
+            "question": "سؤال",
+            "issue": "مشكلة تقنية",
+            "project": "مشروع",
+            "case_study": "دراسة حالة"
+        },
+        "upload_image": "رفع صورة"
+    },
+    "rooms": {
+        "title": "المجتمعات المتخصصة",
+        "subtitle": "انضم إلى المجتمعات التي تهمك وشارك خبراتك مع آلاف المهندسين",
+        "members": "عضو",
+        "join": "انضمام",
+        "leave": "مغادرة",
+        "about": "عن المجتمع",
+        "active": "نشط",
+        "posts": "منشور",
+        "room_posts": "منشورات المجتمع",
+        "active_members": "الأعضاء النشطون",
+        "subtopics": "المواضيع الفرعية",
+        "topics": {
+            "basics": "أساسيات",
+            "advanced": "متقدم",
+            "common_issues": "مشاكل شائعة",
+            "examples": "أمثلة عملية"
+        },
+        "types": {
+            "routing-switching": {
+                "name": "التوجيه والتبديل",
+                "description": "OSPF, EIGRP, VLANs, STP, وبروتوكولات التوجيه"
+            },
+            "fiber-optics": {
+                "name": "الألياف الضوئية",
+                "description": "تركيب الألياف، OTDR، اللحام، والشبكات الضوئية"
+            },
+            "cybersecurity": {
+                "name": "الأمن السيبراني",
+                "description": "الجدران النارية، IDS/IPS، اختبار الاختراق، وتعزيز الأمان"
+            },
+            "troubleshooting": {
+                "name": "مختبر حل المشاكل",
+                "description": "تشخيص الشبكات، تحليل الحزم، وتقنيات التصحيح"
+            },
+            "automation": {
+                "name": "أتمتة الشبكات",
+                "description": "Python, Ansible, APIs, DevOps للشبكات"
+            },
+            "jobs": {
+                "name": "مركز الوظائف",
+                "description": "فرص العمل ووظائف الشبكات"
+            }
+        }
+    },
+    "case_studies": {
+        "title": "دراسات الحالة",
+        "subtitle": "حالات واقعية ومشاكل تم حلها من قبل مهندسين محترفين",
+        "back_to_list": "العودة لدراسات الحالة",
+        "problem_description": "وصف المشكلة",
+        "solution_steps": "خطوات الحل",
+        "final_result": "النتيجة النهائية",
+        "related_cases": "دراسات حالة مشابهة",
+        "example_content": {
+            "problem": "المشكلة كانت تؤثر على الشبكة بشكل كامل مما أدى إلى انقطاع الخدمة عن المستخدمين. بعد الفحص الدقيق، تبين أن السبب الرئيسي هو تكوين خاطئ في بروتوكول Spanning Tree.",
+            "result": "تم حل المشكلة بنجاح وعادت الشبكة للعمل بشكل طبيعي. تم توثيق الحل ومشاركته مع الفريق لتجنب تكرار المشكلة مستقبلاً.",
+            "steps": [
+                "تحديد المشكلة بدقة من خلال فحص اللوجات والـ Topology",
+                "عزل الأجهزة المتأثرة وإيقاف الخدمات غير الضرورية",
+                "تطبيق التكوين الصحيح على الأجهزة المتأثرة",
+                "اختبار الحل على بيئة تجريبية قبل التطبيق",
+                "التطبيق النهائي ومراقبة الأداء"
+            ]
+        }
+    },
+    "profile": {
+        "edit_profile": "تعديل الملف الشخصي",
+        "level": "المستوى",
+        "skills": "المهارات",
+        "certificates": "الشهادات",
+        "activity": "النشاط",
+        "about": "نبذة عني",
+        "joined": "انضم في"
+    },
+    "knowledge": {
+        "title": "مركز المعرفة",
+        "continue_learning": "متابعة التعلم",
+        "levels": {
+            "beginner": "مبتدئ",
+            "intermediate": "متوسط",
+            "advanced": "متقدم"
+        },
+        "lessons": "دروس",
+        "quiz": "اختبار",
+        "start_quiz": "بدء الاختبار"
+    },
+    "jobs": {
+        "title": "الوظائف والفرص",
+        "search_placeholder": "ابحث عن وظيفة...",
+        "filters": {
+            "full_time": "دوام كامل",
+            "part_time": "دوام جزئي",
+            "remote": "عن بعد",
+            "internship": "تدريب"
+        },
+        "apply": "تقديم",
+        "posted": "نشر منذ"
+    },
+    "messages": {
+        "title": "الرسائل",
+        "search_placeholder": "ابحث في المحادثات...",
+        "type_message": "اكتب رسالة...",
+        "online": "متصل",
+        "offline": "غير متصل"
+    },
+    "notifications": {
+        "title": "الإشعارات",
+        "mark_all_read": "تحديد الكل كمقروء",
+        "empty": "لا توجد إشعارات جديدة"
+    },
+    "settings": {
+        "title": "الإعدادات",
+        "account": "الحساب",
+        "privacy": "الخصوصية",
+        "notifications": "الإشعارات",
+        "security": "الأمان",
+        "language": "اللغة",
+        "theme": "المظهر",
+        "save_changes": "حفظ التغييرات"
+    }
+}
