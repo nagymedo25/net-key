@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { TrendingUp, HelpCircle, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PostCard from '../components/PostCard';
 import Card from '../components/ui/Card';
 import { MOCK_POSTS } from '../utils/mockData';
 import { FILTER_OPTIONS } from '../utils/constants';
 import { filterPosts } from '../utils/helpers';
+import { useNavigate } from 'react-router-dom'; 
+import { TrendingUp, HelpCircle, Zap } from 'lucide-react';
 
 export default function HomeFeed() {
     const { t } = useTranslation();
