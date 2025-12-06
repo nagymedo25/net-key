@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection";
 import FeaturesSection from "../components/FeaturesSection";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+import img from "../assets/img1.jpg";
 
 export default function LandingPage() {
   return (
@@ -25,8 +26,9 @@ export default function LandingPage() {
               <li>✅ بيئة نظيفة بدون ضوضاء الشبكات العامة.</li>
             </ul>
           </motion.div>
-          <div className="h-64 rounded-2xl bg-gradient-to-br from-brand-primary to-blue-700 opacity-80 flex items-center justify-center text-white text-2xl font-bold shadow-2xl">
-            Where Networks Become Power.
+          
+          <div className="h-70 rounded-2xl bg-gradient-to-br from-brand-primary to-blue-700 opacity-70 flex items-center justify-center text-white text-2xl font-bold shadow-2xl">
+               <img src={img} alt="" className="h-60 w-145 rounded-[12px] shadow-2xl" contentFit="cover" />
           </div>
         </section>
 

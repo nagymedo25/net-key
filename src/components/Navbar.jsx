@@ -1,6 +1,7 @@
 import { Network, Sun, Moon, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
+import logo from "../assets/Logo-removebg-preview.png";
 import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
@@ -15,7 +16,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="bg-gradient-to-r from-brand-primary to-accent p-2 rounded-lg">
-              <Network className="w-6 h-6 text-white" />
+              <img src= {logo} className="w-10 h-10" />
             </div>
             <span className="font-bold text-xl tracking-wide">NET KEY</span>
           </div>

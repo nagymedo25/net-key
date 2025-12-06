@@ -15,7 +15,13 @@ export default function HomeFeed() {
 
     const trendingTopics = ['CCNA', 'BGP', 'Fiber Optics', 'Wireshark', 'SD-WAN'];
     const topQuestions = MOCK_POSTS.filter(p => p.type === 'question' && !p.isSolved).slice(0, 5);
+  
+    const navigate = useNavigate();
 
+    const handleCreate = () => {
+  
+    navigate('/initializing');
+};
     return (
         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-6">
             {/* Main Feed */}

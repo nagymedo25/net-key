@@ -1,170 +1,123 @@
-/* 1. استيراد الخطوط (يجب أن يكون في أول سطرين) */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-/* 2. استيراد مكتبة Tailwind (يجب أن يلي الخطوط مباشرة) */
-@import "tailwindcss";
-
-/* 3. إعدادات الثيم (Tailwind v4) */
-@theme {
-  /* تعريف الألوان الخاصة بـ NET KEY */
-  --color-brand-primary: #0ea5e9; /* Sky 500 */
-  --color-brand-dark: #0f172a;    /* Slate 900 */
-  --color-brand-light: #f8fafc;   /* Slate 50 */
-  --color-accent: #3b82f6;        /* Blue 500 */
-
-  /* ربط الخط الأساسي بمتغير CSS لسهولة تغييره ديناميكياً */
-  --font-sans: var(--font-family-sans);
-}
-
-/* 4. تعريف متغيرات CSS والجذر */
-:root {
-  /* الخط الافتراضي (عربي) */
-  --font-family-sans: 'Cairo', system-ui, sans-serif;
-  
-  /* إعدادات الألوان الافتراضية (Light Mode) */
-  color-scheme: light;
-  background-color: var(--color-brand-light);
-}
-
-/* تغيير الخط تلقائياً عند تحويل اللغة إلى الإنجليزية (LTR) */
-:root[dir="ltr"] {
-  --font-family-sans: 'Inter', system-ui, sans-serif;
-}
-
 /* إعدادات الوضع الليلي */
 .dark {
-  color-scheme: dark;
-  background-color: var(--color-brand-dark);
-}
 
-/* 5. تنسيقات العناصر الأساسية (Utilities & Base) */
+  /* تخصيص شريط التمرير (Scrollbar) */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
 
-/* تنسيق الـ Body */
-body {
-  @apply bg-slate-50 text-slate-900 transition-colors duration-300;
-  min-height: 100vh;
-  font-family: var(--font-family-sans);
-}
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
 
-.dark body {
-  @apply bg-brand-dark text-slate-50;
-}
+  .dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
 
-/* تحسين الألوان في Light Mode للكروت */
-.light-card {
-  @apply bg-white border-slate-200;
-}
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+  }
 
-.dark .light-card {
-  @apply bg-slate-800 border-slate-700;
-}
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
 
-/* تخصيص شريط التمرير (Scrollbar) */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
+  .dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+  }
 
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
 
-.dark ::-webkit-scrollbar-track {
-  background: #1e293b;
-}
+  /* Animations - حركات */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
 
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 5px;
-}
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
+  .animate-slideIn {
+    animation: slideIn 0.3s ease-out;
+  }
 
-.dark ::-webkit-scrollbar-thumb {
-  background: #475569;
-}
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
 
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
-}
+    to {
+      opacity: 1;
+    }
+  }
 
-/* Animations - حركات */
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-out;
+  }
 
-.animate-slideIn {
-  animation: slideIn 0.3s ease-out;
-}
+  /* Line Clamp Utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
-.animate-fadeIn {
-  animation: fadeIn 0.2s ease-out;
-}
+  /* تحسين النصوص في Light Mode */
+  .text-primary-light {
+    @apply text-slate-900;
+  }
 
-/* Line Clamp Utilities */
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+  .dark .text-primary-light {
+    @apply text-slate-50;
+  }
 
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+  .text-secondary-light {
+    @apply text-slate-600;
+  }
 
-/* تحسين النصوص في Light Mode */
-.text-primary-light {
-  @apply text-slate-900;
-}
+  .dark .text-secondary-light {
+    @apply text-slate-400;
+  }
 
-.dark .text-primary-light {
-  @apply text-slate-50;
-}
+  /* تحسين الـ Borders */
+  .border-light {
+    @apply border-slate-200;
+  }
 
-.text-secondary-light {
-  @apply text-slate-600;
-}
+  .dark .border-light {
+    @apply border-slate-700;
+  }
 
-.dark .text-secondary-light {
-  @apply text-slate-400;
-}
+  /* تحسين الـ Hover States */
+  .hover-light {
+    @apply hover:bg-slate-100;
+  }
 
-/* تحسين الـ Borders */
-.border-light {
-  @apply border-slate-200;
-}
+  .dark .hover-light {
+    @apply hover:bg-slate-800;
+  }
 
-.dark .border-light {
-  @apply border-slate-700;
-}
+  /* تأكيد التباين للنصوص المهمة */
+  .text-emphasis {
+    @apply text-slate-800 font-medium;
+  }
 
-/* تحسين الـ Hover States */
-.hover-light {
-  @apply hover:bg-slate-100;
-}
-
-.dark .hover-light {
-  @apply hover:bg-slate-800;
-}
-
-/* تأكيد التباين للنصوص المهمة */
-.text-emphasis {
-  @apply text-slate-800 font-medium;
-}
-
-.dark .text-emphasis {
-  @apply text-slate-100;
-}
+  .dark .text-emphasis {
+    @apply text-slate-100;
+  }
