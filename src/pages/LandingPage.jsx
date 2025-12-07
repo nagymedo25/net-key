@@ -27,8 +27,8 @@ export default function LandingPage() {
             </ul>
           </motion.div>
           
-          <div className="h-70 rounded-2xl bg-gradient-to-br from-brand-primary to-blue-700 opacity-70 flex items-center justify-center text-white text-2xl font-bold shadow-2xl">
-               <img src={img} alt="" className="h-60 w-145 rounded-[12px] shadow-2xl" contentFit="cover" />
+          <div className="h-70 bg-slate-900/40 backdrop-blur-xl animate-gradient bg-gradient-to-r Deep Galaxy rounded-[12px] bg-gradient-to-br from-brand-primary to-blue-700 opacity-70 flex items-center justify-center text-white text-2xl font-bold shadow-2xl">
+               <img src={img} alt="" className=" rounded-[12px] shadow-2xl" />
           </div>
         </section>
 
