@@ -3,7 +3,7 @@ import HeroSection from "../components/HeroSection";
 import FeaturesSection from "../components/FeaturesSection";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import img from "../assets/img1.jpg";
+import img from "../assets/img1.png";
 
 export default function LandingPage() {
   return (
